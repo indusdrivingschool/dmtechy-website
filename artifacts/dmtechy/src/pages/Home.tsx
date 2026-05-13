@@ -163,12 +163,42 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="relative aspect-square md:aspect-video lg:aspect-square rounded-3xl overflow-hidden bg-white/5 border border-white/10">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_0,transparent_100%)]" />
-              <div className="absolute inset-0 flex items-center justify-center text-white/20">
-                <span className="font-serif text-6xl md:text-8xl font-bold italic opacity-20">DMTECHY</span>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.97 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              className="relative aspect-square md:aspect-video lg:aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=85&auto=format&fit=crop"
+                alt="DMTECHY agency team collaborating"
+                className="w-full h-full object-cover"
+              />
+              {/* Subtle dark overlay to blend with site palette */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-black/10 to-transparent" />
+              {/* Trust badge overlay */}
+              <div className="absolute bottom-5 left-5 flex items-center gap-3 bg-black/70 backdrop-blur-md border border-white/10 rounded-2xl px-4 py-3">
+                <div className="flex -space-x-2">
+                  {[
+                    "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=40&q=80",
+                    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&q=80",
+                    "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=40&q=80",
+                  ].map((src, i) => (
+                    <img
+                      key={i}
+                      src={src}
+                      alt="client"
+                      className="w-8 h-8 rounded-full border-2 border-black object-cover"
+                    />
+                  ))}
+                </div>
+                <div>
+                  <p className="text-white text-xs font-bold leading-tight">300+ Happy Clients</p>
+                  <p className="text-yellow-400 text-xs">★★★★★ 5.0 Rating</p>
+                </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
