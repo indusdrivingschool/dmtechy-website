@@ -34,8 +34,15 @@ export default function Navbar() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link href="/">
-            <span className="text-2xl font-black tracking-tighter text-white cursor-pointer hover:text-gray-300 transition-colors">
-              DMTECHY.
+            <span className="flex items-center gap-2 cursor-pointer group">
+              <img
+                src="/dmtechy-logo.png"
+                alt="DMTECHY Logo"
+                className="h-10 w-10 object-contain transition-transform group-hover:scale-105"
+              />
+              <span className="text-xl font-black tracking-tighter text-white group-hover:text-gray-300 transition-colors">
+                DMTECHY.
+              </span>
             </span>
           </Link>
 

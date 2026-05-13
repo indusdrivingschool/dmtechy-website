@@ -9,8 +9,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-1">
             <Link href="/">
-              <span className="text-3xl font-black tracking-tighter text-white cursor-pointer mb-6 block">
-                DMTECHY.
+              <span className="flex items-center gap-3 cursor-pointer mb-6 group">
+                <img
+                  src="/dmtechy-logo.png"
+                  alt="DMTECHY Logo"
+                  className="h-12 w-12 object-contain transition-transform group-hover:scale-105"
+                />
+                <span className="text-2xl font-black tracking-tighter text-white group-hover:text-gray-300 transition-colors">
+                  DMTECHY.
+                </span>
               </span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
