@@ -1,0 +1,204 @@
+Build a FULL PREMIUM modern agency website for my company “DMTECHY”.
+
+COMPANY DETAILS:
+
+* Brand Name: DMTECHY
+* Domain: dmtechy.com
+* Phone / WhatsApp: +92 318 0245187
+* Email: [info@dmtechy.com](mailto:info@dmtechy.com)
+
+TECH STACK:
+
+* React + Vite
+* Tailwind CSS
+* Framer Motion
+* Lucide React Icons
+* Fully responsive
+* SEO optimized
+* Fast loading
+* Production ready
+
+DESIGN STYLE:
+Create a luxury black and white modern website similar to top international digital agencies.
+
+STYLE REQUIREMENTS:
+
+* Premium UI/UX
+* Black background with white text
+* Minimal and elegant
+* Smooth animations
+* Glassmorphism effects
+* Modern spacing
+* Professional typography
+* Hover animations
+* Scroll animations
+* Mobile responsive
+* Sticky navbar
+* Floating WhatsApp button
+* High-end agency feeling
+* Strong call-to-action sections
+
+IMPORTANT:
+This website must look EXPENSIVE, TRUSTWORTHY, GLOBAL, and PROFESSIONAL so international clients can trust the company immediately.
+
+CREATE THESE PAGES:
+
+1. Home
+2. About
+3. Services
+4. Portfolio
+5. Testimonials
+6. Contact
+7. Privacy Policy
+
+HOME PAGE:
+Create a stunning hero section with:
+Headline:
+“We Build Powerful Digital Experiences”
+
+Subheadline:
+“Professional Web Development & Digital Marketing Solutions for Businesses Worldwide.”
+
+Buttons:
+
+* Get Started
+* Contact Us
+
+Add:
+
+* Animated background
+* Company stats
+* Trusted clients section
+* Services preview
+* Portfolio showcase
+* Reviews carousel
+* Why choose us
+* FAQ section
+* Newsletter section
+* Professional footer
+
+SERVICES SECTION:
+Create premium animated cards for:
+
+* Website Development
+* Business Websites
+* Ecommerce Store Development
+* Shopify Store Setup
+* Digital Marketing
+* Facebook Advertising
+* Social Media Marketing
+* SEO Optimization
+* Graphic Design
+* Branding
+* Virtual Assistance
+* Landing Pages
+* Website Redesign
+* Website Speed Optimization
+
+ABOUT SECTION:
+Write professional agency content explaining:
+
+* Expert web developers
+* Creative designers
+* Digital marketing experts
+* Helping businesses grow globally
+* Modern technologies
+* Fast support
+* Professional quality services
+
+PORTFOLIO SECTION:
+Create modern project showcase cards with:
+
+* Ecommerce projects
+* Business websites
+* Marketing campaigns
+* Branding projects
+* UI/UX projects
+
+TESTIMONIALS:
+Add beautiful client review cards with:
+
+* Client image placeholder
+* Name
+* Company
+* 5-star rating
+* Professional positive reviews
+
+CONTACT PAGE:
+Add:
+
+* Modern contact form
+* WhatsApp button
+* Email contact
+* Phone number
+* Google Maps placeholder
+* Business hours
+* Social media links
+
+WHATSAPP:
+Add animated floating WhatsApp button on bottom-right corner on every page:
+[https://wa.me/923180245187](https://wa.me/923180245187)
+
+HEADER:
+Create premium sticky navbar with:
+
+* Logo text “DMTECHY”
+* Navigation menu
+* CTA button
+* Mobile hamburger menu
+
+FOOTER:
+Add:
+
+* Company description
+* Quick links
+* Services
+* Contact info
+* Social icons
+* Copyright section
+
+ANIMATIONS:
+Use Framer Motion for:
+
+* Fade-in effects
+* Slide animations
+* Hover effects
+* Smooth transitions
+* Animated counters
+* Scroll reveal animations
+
+SEO:
+Add:
+
+* Meta titles
+* Meta descriptions
+* Open Graph tags
+* Proper headings
+* Fast performance
+* SEO optimized structure
+
+EXTRA PREMIUM FEATURES:
+
+* Back-to-top button
+* Loading animation
+* Sticky CTA section
+* Trust badges
+* “Satisfied Clients” section
+* “Projects Completed” counters
+* FAQ accordion
+* Newsletter signup
+* Modern pricing section
+* Elegant cards and shadows
+
+MAKE THE WEBSITE FEEL:
+
+* Premium
+* International
+* Luxury
+* Professional
+* Modern
+* High-converting
+* Trusted worldwide
+
+VERY IMPORTANT:
+Generate the COMPLETE website with all pages, modern components, responsive design, animations, and premium styling. Make it look like a real international digital agency worth thousands of dollars.
