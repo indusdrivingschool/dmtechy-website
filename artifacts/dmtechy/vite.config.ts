@@ -1,4 +1,3 @@
-cat > artifacts/dmtechy/vite.config.ts << 'EOF'
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
@@ -19,8 +18,7 @@ export default defineConfig({
   },
   root: path.resolve(import.meta.dirname),
   build: {
-    outDir: "dist/public",
+    outDir: "dist",
     emptyOutDir: true,
   },
 });
-EOF
