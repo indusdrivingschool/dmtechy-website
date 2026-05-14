@@ -1,0 +1,62 @@
+2026-05-14T17:22:51.556842Z	Cloning repository...
+2026-05-14T17:22:52.45216Z	From https://github.com/indusdrivingschool/dmtechy-website
+2026-05-14T17:22:52.452558Z	 * branch            46b34cae3438043a50bf011969579d43e31fb314 -> FETCH_HEAD
+2026-05-14T17:22:52.452632Z	
+2026-05-14T17:22:52.490221Z	HEAD is now at 46b34ca Update vite.config.ts
+2026-05-14T17:22:52.490633Z	
+2026-05-14T17:22:52.53702Z	
+2026-05-14T17:22:52.537483Z	Using v2 root directory strategy
+2026-05-14T17:22:52.552493Z	Success: Finished cloning repository files
+2026-05-14T17:22:54.913136Z	Checking for configuration in a Wrangler configuration file (BETA)
+2026-05-14T17:22:54.914173Z	
+2026-05-14T17:22:56.0127Z	No Wrangler configuration file found. Continuing.
+2026-05-14T17:22:56.242706Z	Detected the following tools from environment: nodejs@20.20.0, pnpm@10.11.1
+2026-05-14T17:22:56.243056Z	Installing nodejs 20.20.0
+2026-05-14T17:22:57.125089Z	Trying to update node-build... ok
+2026-05-14T17:22:57.195088Z	To follow progress, use 'tail -f /tmp/node-build.20260514172257.804.log' or pass --verbose
+2026-05-14T17:22:57.252592Z	Downloading node-v20.20.0-linux-x64.tar.gz...
+2026-05-14T17:22:57.485515Z	-> https://nodejs.org/dist/v20.20.0/node-v20.20.0-linux-x64.tar.gz
+2026-05-14T17:22:59.900442Z	
+2026-05-14T17:22:59.900731Z	WARNING: node-v20.20.0-linux-x64 is in LTS Maintenance mode and nearing its end of life.
+2026-05-14T17:22:59.901107Z	It only receives *critical* security updates, *critical* bug fixes and documentation updates.
+2026-05-14T17:22:59.90131Z	
+2026-05-14T17:22:59.901537Z	Installing node-v20.20.0-linux-x64...
+2026-05-14T17:23:00.504875Z	Installed node-v20.20.0-linux-x64 to /opt/buildhome/.asdf/installs/nodejs/20.20.0
+2026-05-14T17:23:00.505225Z	
+2026-05-14T17:23:02.140984Z	
+2026-05-14T17:23:02.142207Z	changed 1 package in 736ms
+2026-05-14T17:23:02.15109Z	Reshimming asdf nodejs...
+2026-05-14T17:23:04.733716Z	Preparing pnpm@10.11.1 for immediate activation...
+2026-05-14T17:23:05.778752Z	Installing project dependencies: pnpm install
+2026-05-14T17:23:06.432176Z	Scope: all 9 workspace projects
+2026-05-14T17:23:06.515084Z	Lockfile is up to date, resolution step is skipped
+2026-05-14T17:23:06.562852Z	Progress: resolved 1, reused 0, downloaded 0, added 0
+2026-05-14T17:23:06.65395Z	Packages: +486
+2026-05-14T17:23:06.654376Z	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2026-05-14T17:23:07.565262Z	Progress: resolved 486, reused 0, downloaded 64, added 0
+2026-05-14T17:23:08.565926Z	Progress: resolved 486, reused 0, downloaded 113, added 13
+2026-05-14T17:23:09.570351Z	Progress: resolved 486, reused 0, downloaded 181, added 46
+2026-05-14T17:23:10.571769Z	Progress: resolved 486, reused 0, downloaded 282, added 115
+2026-05-14T17:23:11.56955Z	Progress: resolved 486, reused 0, downloaded 329, added 141
+2026-05-14T17:23:12.569632Z	Progress: resolved 486, reused 0, downloaded 475, added 382
+2026-05-14T17:23:13.399521Z	Progress: resolved 486, reused 0, downloaded 486, added 486, done
+2026-05-14T17:23:13.608266Z	.../esbuild@0.27.3/node_modules/esbuild postinstall$ node install.js
+2026-05-14T17:23:13.698577Z	.../esbuild@0.27.3/node_modules/esbuild postinstall: Done
+2026-05-14T17:23:13.947993Z	
+2026-05-14T17:23:13.948516Z	devDependencies:
+2026-05-14T17:23:13.948607Z	+ prettier 3.8.1
+2026-05-14T17:23:13.948675Z	+ typescript 5.9.3
+2026-05-14T17:23:13.948715Z	
+2026-05-14T17:23:13.99508Z	. preinstall$ sh -c 'rm -f package-lock.json yarn.lock; case "$npm_config_user_agent" in pnpm/*) ;; *) echo "Use pnpm instead" >&2; exit 1 ;; esac'
+2026-05-14T17:23:14.010799Z	. preinstall: Done
+2026-05-14T17:23:14.227715Z	Done in 8.2s using pnpm v10.11.1
+2026-05-14T17:23:14.273717Z	Executing user command: pnpm --filter @workspace/dmtechy run build:deploy
+2026-05-14T17:23:14.850436Z	None of the selected packages has a "build:deploy" script
+2026-05-14T17:23:14.874522Z	Finished
+2026-05-14T17:23:15.619128Z	Checking for configuration in a Wrangler configuration file (BETA)
+2026-05-14T17:23:15.619656Z	
+2026-05-14T17:23:16.722749Z	No Wrangler configuration file found. Continuing.
+2026-05-14T17:23:16.724234Z	Note: No functions dir at /functions found. Skipping.
+2026-05-14T17:23:16.724414Z	Validating asset output directory
+2026-05-14T17:23:16.724529Z	Error: Output directory "artifacts/dmtechy/dist" not found.
+2026-05-14T17:23:18.379435Z	Failed: build output directory not found
