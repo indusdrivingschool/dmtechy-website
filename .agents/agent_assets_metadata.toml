@@ -1,0 +1,14 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "nfQZ4dje_E163gv2eY1Oj"
+uri = "file://dmtechy-website.tar.gz"
+type = "unspecified"
+title = "DMTECHY Website — Ready to Upload"
+
+[[outputs]]
+id = "Ek59Z3C7K8konJ8_SdZlm"
+uri = "file://dmtechy-website.zip"
+type = "unspecified"
+title = "DMTECHY Website — Upload to Cloudflare"
