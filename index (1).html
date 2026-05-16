@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>DMTECHY. — Premium Digital Agency</title>
+<meta name="description" content="DMTECHY is a premium global digital agency. Web development, eCommerce, digital marketing, Facebook ads, graphic design & virtual assistance worldwide."/>
+<link rel="icon" href="dm_techy.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+:root{
+  --bg:#000;--bg1:#0a0a0a;--bg2:#111;--bg3:#1a1a1a;--bg4:#222;
+  --white:#fff;--off:#f5f5f5;
+  --pink:#FF0099;--pink2:rgba(255,0,153,.12);
+  --gray:#888;--gray2:#555;--gray3:#333;
+  --border:rgba(255,255,255,.08);
+  --f:'Inter',system-ui,sans-serif;
+  --ease:cubic-bezier(.25,.46,.45,.94)
+}
+body{background:var(--bg);color:var(--white);font-family:var(--f);overflow-x:hidden;line-height:1.6}
+
+/* ── WHATSAPP ── */
+.wa{position:fixed;bottom:28px;right:28px;z-index:9999;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:transform .25s var(--ease);box-shadow:0 4px 20px rgba(37,211,102,.4)}
+.wa:hover{transform:scale(1.1)}
+.wa svg{width:26px;height:26px;fill:#fff}
+.wa-ring{position:absolute;inset:-5px;border-radius:50%;border:2px solid rgba(37,211,102,.35);animation:wring 2.5s ease-out infinite}
+@keyframes wring{0%{transform:scale(.95);opacity:.7}100%{transform:scale(1.55);opacity:0}}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:900;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 6%;background:rgba(0,0,0,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:9px;text-decoration:none}
+.nav-logo img{width:32px;height:32px;border-radius:8px;object-fit:cover}
+.nav-logo-txt{font-size:1.05rem;font-weight:800;color:var(--white);letter-spacing:-.02em}
+.nav-logo-txt span{color:var(--pink)}
+.nav-ul{display:flex;align-items:center;gap:2.5rem;list-style:none}
+.nav-ul a{font-size:.75rem;font-weight:600;color:var(--gray);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
+.nav-ul a:hover,.nav-ul a.active{color:var(--white)}
+.nav-btn{background:var(--white)!important;color:var(--bg)!important;padding:.42rem 1.2rem;border-radius:25px;font-size:.75rem!important;font-weight:700!important;letter-spacing:.02em!important;text-transform:none!important;transition:opacity .2s!important}
+.nav-btn:hover{opacity:.85}
+.hb{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hb span{display:block;width:22px;height:1.5px;background:var(--white);border-radius:2px;transition:.3s}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 6% 8rem;position:relative;overflow:hidden;background:var(--bg)}
+/* faint dot grid */
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
+/* pink glow top right */
+.hero::after{content:'';position:absolute;top:-10%;right:-5%;width:600px;height:600px;background:radial-gradient(circle,rgba(255,0,153,.08) 0%,transparent 65%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:500;color:var(--white);background:rgba(255,255,255,.07);border:1px solid var(--border);border-radius:25px;padding:.3rem .9rem;margin-bottom:2rem;width:fit-content}
+.hero-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0;animation:greenblink 2s ease-in-out infinite}
+@keyframes greenblink{0%,100%{opacity:1}50%{opacity:.2}}
+.hero h1{font-size:clamp(3.5rem,8vw,8rem);font-weight:900;letter-spacing:-.04em;line-height:.95;color:var(--white);margin-bottom:1.2rem;max-width:800px}
+.hero h1 em{font-style:italic;font-weight:300;color:rgba(255,255,255,.4)}
+.hero-sub{font-size:clamp(.9rem,1.4vw,1.1rem);color:var(--gray);max-width:520px;margin-bottom:2.5rem;line-height:1.75;font-weight:400}
+.hero-btns{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--f);font-size:.83rem;font-weight:700;padding:.78rem 1.7rem;border-radius:25px;text-decoration:none;cursor:pointer;transition:all .25s var(--ease);border:none;letter-spacing:-.01em}
+.btn-white{background:var(--white);color:var(--bg)}
+.btn-white:hover{background:var(--off);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.2)}
+.btn-outline:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.04)}
+
+/* ── STATS ── */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg)}
+.stat-item{padding:3.5rem 2rem;text-align:center;border-right:1px solid var(--border)}
+.stat-item:last-child{border-right:none}
+.stat-n{display:block;font-size:3.2rem;font-weight:900;color:var(--white);letter-spacing:-.05em;line-height:1}
+.stat-l{font-size:.62rem;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:.14em;margin-top:.5rem}
+
+/* ── CAPABILITIES ── */
+.caps{padding:7rem 6%;background:var(--bg)}
+.caps-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:4rem;flex-wrap:wrap;gap:1.5rem}
+.caps-left h2{font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;letter-spacing:-.045em;line-height:1.0;color:var(--white)}
+.caps-left p{font-size:.88rem;color:var(--gray);margin-top:.8rem;max-width:420px;line-height:1.7}
+.view-all{font-size:.72rem;font-weight:700;color:var(--white);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:.5rem;white-space:nowrap;opacity:.6;transition:opacity .2s}
+.view-all:hover{opacity:1}
+.caps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.cap-card{background:var(--bg1);padding:2.8rem 2.5rem;transition:background .22s var(--ease);cursor:default;position:relative;border-radius:0}
+.cap-card:hover{background:var(--bg2)}
+.cap-icon{width:44px;height:44px;border-radius:10px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:2rem;font-size:1.1rem}
+.cap-card h3{font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:.65rem;letter-spacing:-.02em}
+.cap-card p{font-size:.82rem;color:var(--gray);line-height:1.75}
+.cap-arrow{position:absolute;bottom:2rem;right:2rem;width:32px;height:32px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:.8rem;transition:all .22s var(--ease)}
+.cap-card:hover .cap-arrow{border-color:rgba(255,255,255,.3);color:var(--white);transform:translate(2px,-2px)}
+
+/* ── ABOUT ── */
+.about{padding:7rem 6%;background:var(--bg1);border-top:1px solid var(--border)}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:center}
+.about-img-wrap{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:.85}
+.about-img-wrap img{width:100%;height:100%;object-fit:cover;filter:grayscale(100%) contrast(1.05)}
+.about-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.8))}
+.about-label{position:absolute;bottom:20px;left:20px;right:20px;background:rgba(255,255,255,.06);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:1rem 1.2rem;z-index:1;display:flex;align-items:center;gap:.8rem}
+.about-label-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;flex-shrink:0;animation:greenblink 2s ease-in-out infinite}
+.about-label span{font-size:.78rem;color:var(--white);font-weight:500}
+.about-content h2{font-size:clamp(2rem,4vw,3.8rem);font-weight:900;letter-spacing:-.045em;line-height:1.05;color:var(--white);margin-bottom:1.2rem}
+.about-content h2 em{font-style:italic;font-weight:300;color:rgba(255,255,255,.4)}
+.about-content p{font-size:.9rem;color:var(--gray);line-height:1.8;margin-bottom:2rem}
+.about-pts{list-style:none;margin-bottom:2.5rem}
+.about-pt{display:flex;align-items:flex-start;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--border)}
+.about-pt:last-child{border-bottom:none}
+.about-pt-ic{width:34px;height:34px;border-radius:8px;border:1px solid var(--border);background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+.about-pt h4{font-size:.88rem;font-weight:700;color:var(--white);margin-bottom:.2rem;letter-spacing:-.02em}
+.about-pt p{font-size:.78rem;color:var(--gray);line-height:1.6;margin-bottom:0}
+
+/* ── PROCESS ── */
+.process{padding:7rem 6%;background:var(--bg);border-top:1px solid var(--border)}
+.process h2{font-size:clamp(2rem,4vw,3.8rem);font-weight:900;letter-spacing:-.045em;line-height:1.0;color:var(--white);margin-bottom:.8rem}
+.process-sub{font-size:.88rem;color:var(--gray);margin-bottom:4.5rem;max-width:400px;line-height:1.7}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.step{padding:2.5rem 2rem;border-right:1px solid var(--border);position:relative}
+.step:last-child{border-right:none}
+.step-num{font-size:3.5rem;font-weight:900;color:rgba(255,255,255,.05);letter-spacing:-.06em;line-height:1;margin-bottom:1.5rem;display:block}
+.step h4{font-size:.92rem;font-weight:700;color:var(--white);margin-bottom:.5rem;letter-spacing:-.02em}
+.step p{font-size:.8rem;color:var(--gray);line-height:1.72}
+
+/* ── GLOBAL ── */
+.global{padding:6rem 6%;background:var(--bg1);border-top:1px solid var(--border);text-align:center}
+.global h2{font-size:clamp(2rem,4vw,3.5rem);font-weight:900;letter-spacing:-.045em;line-height:1.0;color:var(--white);margin-bottom:1rem}
+.global p{font-size:.9rem;color:var(--gray);max-width:440px;margin:0 auto 2.5rem;line-height:1.75}
+.flags{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:3rem}
+.flag{font-size:.72rem;font-weight:500;color:var(--gray);background:var(--bg2);border:1px solid var(--border);padding:.32rem .9rem;border-radius:20px;letter-spacing:.02em}
+
+/* ── PRICING ── */
+.pricing{padding:7rem 6%;background:var(--bg);border-top:1px solid var(--border)}
+.pricing-hd{text-align:center;margin-bottom:4.5rem}
+.pricing-hd h2{font-size:clamp(2rem,4vw,3.8rem);font-weight:900;letter-spacing:-.045em;color:var(--white);line-height:1.0;margin-bottom:.8rem}
+.pricing-hd p{font-size:.9rem;color:var(--gray);max-width:420px;margin:0 auto;line-height:1.75}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1100px;margin:0 auto}
+.pcard{background:var(--bg1);border:1px solid var(--border);border-radius:16px;padding:2.8rem;position:relative;transition:all .25s var(--ease)}
+.pcard:hover{border-color:rgba(255,255,255,.18);transform:translateY(-4px)}
+.pcard.hot{background:var(--white);border-color:var(--white)}
+.pcard.hot *{color:var(--bg)!important}
+.hot-tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--white);color:var(--bg);font-size:.6rem;font-weight:800;padding:.22rem 1rem;border-radius:20px;white-space:nowrap;letter-spacing:.06em}
+.pcard.hot .hot-tag{background:var(--bg);color:var(--white)}
+.p-name{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--gray);margin-bottom:1.2rem}
+.p-price{font-size:3.5rem;font-weight:900;letter-spacing:-.055em;color:var(--white);line-height:1}
+.p-per{font-size:.72rem;color:var(--gray);margin-bottom:2rem;margin-top:.3rem}
+.p-feats{list-style:none;margin-bottom:2rem}
+.p-feats li{display:flex;align-items:flex-start;gap:.75rem;padding:.52rem 0;font-size:.82rem;color:var(--gray);border-bottom:1px solid rgba(255,255,255,.05);letter-spacing:-.01em}
+.pcard.hot .p-feats li{border-bottom-color:rgba(0,0,0,.07)}
+.p-feats li:last-child{border-bottom:none}
+.p-feats li::before{content:'✓';font-weight:800;color:var(--white);flex-shrink:0;font-size:.72rem;margin-top:2px}
+.pcard.hot .p-feats li::before{color:var(--bg)}
+
+/* ── TESTIMONIALS ── */
+.testis{padding:7rem 6%;background:var(--bg1);border-top:1px solid var(--border)}
+.testis h2{font-size:clamp(2rem,4vw,3.8rem);font-weight:900;letter-spacing:-.045em;color:var(--white);line-height:1.0;margin-bottom:.8rem}
+.testis-sub{font-size:.88rem;color:var(--gray);margin-bottom:4rem;max-width:380px;line-height:1.7}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.tcard{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:2.3rem;transition:all .25s var(--ease)}
+.tcard:hover{background:var(--bg3);border-color:rgba(255,255,255,.15);transform:translateY(-3px)}
+.tcard-stars{font-size:.82rem;letter-spacing:2px;color:var(--white);margin-bottom:1.1rem;display:block}
+.tcard-text{font-size:.85rem;color:var(--gray);line-height:1.8;font-style:italic;margin-bottom:1.5rem}
+.tcard-author{display:flex;align-items:center;gap:.8rem;padding-top:1.2rem;border-top:1px solid var(--border)}
+.tcard-av{width:38px;height:38px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;color:var(--white);flex-shrink:0}
+.tcard-name{font-size:.85rem;font-weight:700;color:var(--white);letter-spacing:-.02em}
+.tcard-loc{font-size:.7rem;color:var(--gray);margin-top:.1rem}
+
+/* ── CTA ── */
+.cta{padding:8rem 6%;background:var(--white);text-align:center}
+.cta h2{font-size:clamp(2.5rem,5vw,5rem);font-weight:900;letter-spacing:-.055em;color:var(--bg);line-height:1.0;margin-bottom:1.2rem}
+.cta p{font-size:.97rem;color:#555;max-width:460px;margin:0 auto 2.5rem;line-height:1.75}
+.btn-dark{background:var(--bg);color:var(--white)}
+.btn-dark:hover{background:#222;transform:translateY(-1px)}
+
+/* ── CONTACT ── */
+.contact{padding:7rem 6%;background:var(--bg);border-top:1px solid var(--border)}
+.contact-inner{display:grid;grid-template-columns:1fr 1.7fr;gap:5rem}
+.contact-info h2{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;letter-spacing:-.04em;color:var(--white);line-height:1.1;margin-bottom:.8rem}
+.contact-info p{font-size:.88rem;color:var(--gray);line-height:1.75;margin-bottom:2.5rem}
+.clink{display:flex;align-items:center;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--border);text-decoration:none;transition:opacity .2s}
+.clink:hover{opacity:.7}
+.clink:last-child{border-bottom:none}
+.clink-ic{width:42px;height:42px;border-radius:9px;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.clink-lbl{font-size:.6rem;font-weight:600;color:var(--gray2);text-transform:uppercase;letter-spacing:.1em}
+.clink-val{font-size:.88rem;color:var(--white);font-weight:500;margin-top:.12rem}
+.cform{display:flex;flex-direction:column;gap:.8rem}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.fg{display:flex;flex-direction:column;gap:.35rem}
+.fg label{font-size:.6rem;font-weight:600;color:var(--gray2);text-transform:uppercase;letter-spacing:.1em}
+.fg input,.fg textarea,.fg select{background:var(--bg1);border:1px solid var(--border);border-radius:9px;color:var(--white);font-family:var(--f);font-size:.86rem;padding:.82rem 1rem;transition:border-color .2s;outline:none;resize:none;width:100%}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:rgba(255,255,255,.3)}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--gray2)}
+.fg select option{background:var(--bg2)}
+.fsub{background:var(--white);color:var(--bg);width:100%;text-align:center;border-radius:25px;padding:.9rem;font-size:.87rem;font-weight:800;cursor:pointer;transition:all .25s var(--ease);border:none;font-family:var(--f);letter-spacing:-.01em}
+.fsub:hover{background:var(--off);transform:translateY(-1px)}
+.fsub:disabled{opacity:.5;cursor:not-allowed;transform:none}
+#fmsg{display:none;font-size:.75rem;text-align:center;padding:.7rem;border-radius:9px;margin-top:.2rem}
+#fmsg.ok{color:#4ade80;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2)}
+#fmsg.err{color:var(--white);background:rgba(255,255,255,.04);border:1px solid var(--border)}
+
+/* ── FOOTER ── */
+.footer{background:var(--bg);border-top:1px solid var(--border);padding:4.5rem 6% 3rem}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;padding-bottom:3.5rem;border-bottom:1px solid var(--border)}
+.footer-brand img{width:42px;height:42px;border-radius:10px;object-fit:cover;margin-bottom:1rem}
+.footer-brand-name{font-size:1rem;font-weight:800;color:var(--white);margin-bottom:.4rem;letter-spacing:-.02em}
+.footer-brand-name span{color:var(--pink)}
+.footer-brand p{font-size:.78rem;color:var(--gray);line-height:1.75;max-width:210px;margin-top:.5rem}
+.footer-socials{display:flex;gap:.6rem;margin-top:1.2rem}
+.fsoc{width:34px;height:34px;border-radius:8px;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--gray);text-decoration:none;font-size:.65rem;font-weight:600;transition:all .2s}
+.fsoc:hover{background:var(--bg3);color:var(--white);border-color:rgba(255,255,255,.2)}
+.footer-col h5{font-size:.6rem;font-weight:700;color:var(--gray2);text-transform:uppercase;letter-spacing:.14em;margin-bottom:1.3rem}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:.65rem}
+.footer-col a{font-size:.8rem;color:var(--gray);text-decoration:none;transition:color .2s;letter-spacing:-.01em}
+.footer-col a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:2.5rem}
+.footer-copy{font-size:.7rem;color:var(--gray2);letter-spacing:-.01em}
+.footer-policy{display:flex;gap:1.5rem}
+.footer-policy a{font-size:.7rem;color:var(--gray2);text-decoration:none;transition:color .2s}
+.footer-policy a:hover{color:var(--white)}
+
+/* ── ANIMATIONS ── */
+[data-r]{opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+[data-r].in{opacity:1;transform:translateY(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .caps-grid{grid-template-columns:1fr 1fr}
+  .about-inner{grid-template-columns:1fr;gap:3rem}
+  .about-img-wrap{display:none}
+  .steps-grid{grid-template-columns:1fr 1fr}
+  .step{border-bottom:1px solid var(--border)}
+  .step:nth-child(even){border-right:none}
+  .pricing-grid{grid-template-columns:1fr;max-width:440px}
+  .tgrid{grid-template-columns:1fr}
+  .contact-inner{grid-template-columns:1fr;gap:3rem}
+  .footer-top{grid-template-columns:1fr 1fr;gap:2.5rem}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat-item:nth-child(2){border-right:none}
+  .stat-item:nth-child(3){border-right:1px solid var(--border);border-top:1px solid var(--border)}
+  .stat-item:nth-child(4){border-top:1px solid var(--border)}
+}
+@media(max-width:640px){
+  .nav-ul{display:none;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:rgba(0,0,0,.97);backdrop-filter:blur(20px);padding:1.5rem 6%;border-bottom:1px solid var(--border);gap:1.2rem;z-index:999}
+  .nav-ul.open{display:flex}
+  .hb{display:flex}
+  .hero{padding:0 5% 6rem}
+  .caps-grid{grid-template-columns:1fr}
+  .steps-grid{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/923180245187" target="_blank" class="wa" title="Chat on WhatsApp">
+  <div class="wa-ring"></div>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- Nav -->
+<nav class="nav">
+  <a href="#" class="nav-logo">
+    <img src="dm_techy.png" alt="DMTECHY"/>
+    <span class="nav-logo-txt">DMTECHY<span>.</span></span>
+  </a>
+  <ul class="nav-ul" id="navLinks">
+    <li><a href="#" class="active">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact" class="nav-btn">Start a Project</a></li>
+  </ul>
+  <button class="hb" onclick="document.getElementById('navLinks').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-badge">● Accepting New Projects</div>
+  <h1>We Build Powerful<br/>Digital <em>Experiences.</em></h1>
+  <p class="hero-sub">Professional Web Development & Digital Marketing Solutions for Businesses Worldwide. We transform complex challenges into elegant, high-converting digital realities.</p>
+  <div class="hero-btns">
+    <a href="#contact" class="btn btn-white">Get Started →</a>
+    <a href="#services" class="btn btn-outline">View Our Work</a>
+  </div>
+</section>
+
+<!-- Stats -->
+<div class="stats">
+  <div class="stat-item" data-r><span class="stat-n">500+</span><span class="stat-l">Projects</span></div>
+  <div class="stat-item" data-r><span class="stat-n">300+</span><span class="stat-l">Clients</span></div>
+  <div class="stat-item" data-r><span class="stat-n">5+</span><span class="stat-l">Years Experience</span></div>
+  <div class="stat-item" data-r><span class="stat-n">99%</span><span class="stat-l">Satisfaction</span></div>
+</div>
+
+<!-- Capabilities -->
+<section class="caps" id="services">
+  <div class="caps-header">
+    <div class="caps-left">
+      <h2>Capabilities.</h2>
+      <p>Comprehensive digital solutions designed to scale your business and dominate your market.</p>
+    </div>
+    <a href="#contact" class="view-all">VIEW ALL SERVICES →</a>
+  </div>
+  <div class="caps-grid">
+    <div class="cap-card" data-r>
+      <div class="cap-icon">🌐</div>
+      <h3>Web Development</h3>
+      <p>Custom, high-performance websites and web apps built with modern technologies. Fast, scalable, and built to convert.</p>
+      <div class="cap-arrow">↗</div>
+    </div>
+    <div class="cap-card" data-r>
+      <div class="cap-icon">📣</div>
+      <h3>Digital Marketing</h3>
+      <p>Data-driven marketing strategies that deliver measurable ROI. SEO, content, email and social media growth.</p>
+      <div class="cap-arrow">↗</div>
+    </div>
+    <div class="cap-card" data-r>
+      <div class="cap-icon">⚡</div>
+      <h3>Ecommerce Solutions</h3>
+      <p>Scalable online stores engineered for maximum conversion. Shopify, WooCommerce, dropshipping & full management.</p>
+      <div class="cap-arrow">↗</div>
+    </div>
+    <div class="cap-card" data-r>
+      <div class="cap-icon">📱</div>
+      <h3>Facebook & Meta Ads</h3>
+      <p>High-ROI paid campaigns. Audience research, creative design, A/B testing and scaling — fully managed for you.</p>
+      <div class="cap-arrow">↗</div>
+    </div>
+    <div class="cap-card" data-r>
+      <div class="cap-icon">🎨</div>
+      <h3>Graphic Design</h3>
+      <p>Logos, brand identity, social graphics, ad creatives & print materials that make your brand unforgettable.</p>
+      <div class="cap-arrow">↗</div>
+    </div>
+    <div class="cap-card" data-r>
+      <div class="cap-icon">🤝</div>
+      <h3>Virtual Assistance</h3>
+      <p>Reliable remote support — admin, customer service, data entry, order management & daily operations handled.</p>
+      <div class="cap-arrow">↗</div>
+    </div>
+    <div class="cap-card" data-r>
+      <div class="cap-icon">💼</div>
+      <h3>Business Websites</h3>
+      <p>Professional multi-page sites that build trust and bring clients. SEO-ready, mobile-first, built to convert leads.</p>
+      <div class="cap-arrow">↗</div>
+    </div>
+    <div class="cap-card" data-r>
+      <div class="cap-icon">🤖</div>
+      <h3>AI Solutions</h3>
+      <p>Integrate AI into your business — chatbots, automation, content generation and smart workflows that cut costs.</p>
+      <div class="cap-arrow">↗</div>
+    </div>
+    <div class="cap-card" data-r>
+      <div class="cap-icon">📊</div>
+      <h3>Store Management</h3>
+      <p>Ongoing eCommerce management — product updates, inventory, support, orders & monthly performance reports.</p>
+      <div class="cap-arrow">↗</div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-img-wrap">
+      <img src="dm_techy.png" alt="DMTECHY"/>
+      <div class="about-label">
+        <div class="about-label-dot"></div>
+        <span>Serving 15+ Countries Worldwide</span>
+      </div>
+    </div>
+    <div class="about-content">
+      <h2>Built for your<br/><em>digital success.</em></h2>
+      <p>DMTECHY is a premium global digital agency combining creativity, technology and strategy to deliver real, measurable results. We don't just build — we grow businesses.</p>
+      <ul class="about-pts">
+        <li class="about-pt" data-r><div class="about-pt-ic">🌍</div><div><h4>Global Reach</h4><p>Clients from USA, UK, UAE, Canada, Australia & 15+ countries — premium results, local service.</p></div></li>
+        <li class="about-pt" data-r><div class="about-pt-ic">⚡</div><div><h4>All-in-One Agency</h4><p>Web, marketing, design, ads & VA — everything under one roof. One team, one goal.</p></div></li>
+        <li class="about-pt" data-r><div class="about-pt-ic">✅</div><div><h4>Delivered on Time</h4><p>Clear scope, real timelines, no hidden fees — every single time, on time.</p></div></li>
+        <li class="about-pt" data-r><div class="about-pt-ic">💬</div><div><h4>24/7 WhatsApp Support</h4><p>Always reachable, always responsive. Your timezone, our priority.</p></div></li>
+      </ul>
+      <div style="display:flex;gap:.8rem;flex-wrap:wrap">
+        <a href="https://wa.me/923180245187" target="_blank" class="btn btn-white">WhatsApp Us</a>
+        <a href="#contact" class="btn btn-outline">Send Message</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process" id="process">
+  <h2>How We Work.</h2>
+  <p class="process-sub">Simple, clear and professional — from first message to final launch.</p>
+  <div class="steps-grid">
+    <div class="step" data-r><span class="step-num">01</span><h4>Tell Us Your Goal</h4><p>Reach out on WhatsApp or fill our form. Tell us what you need and your budget.</p></div>
+    <div class="step" data-r><span class="step-num">02</span><h4>Free Consultation</h4><p>We send a detailed custom proposal within 24 hours — no obligation, no cost.</p></div>
+    <div class="step" data-r><span class="step-num">03</span><h4>Build & Update</h4><p>Our team works with regular updates and revisions — you stay in full control.</p></div>
+    <div class="step" data-r><span class="step-num">04</span><h4>Launch & Grow</h4><p>We launch and provide ongoing support, management and growth strategies.</p></div>
+  </div>
+</section>
+
+<!-- Global -->
+<section class="global">
+  <h2>Serving Clients<br/>Worldwide.</h2>
+  <p>Premium digital services at competitive prices — in your timezone, wherever you are in the world.</p>
+  <div class="flags">
+    <span class="flag">🇺🇸 USA</span><span class="flag">🇬🇧 UK</span><span class="flag">🇨🇦 Canada</span><span class="flag">🇦🇺 Australia</span><span class="flag">🇦🇪 UAE</span><span class="flag">🇸🇦 Saudi Arabia</span><span class="flag">🇩🇪 Germany</span><span class="flag">🇫🇷 France</span><span class="flag">🇵🇰 Pakistan</span><span class="flag">🇮🇳 India</span><span class="flag">🇳🇬 Nigeria</span><span class="flag">🌍 & More</span>
+  </div>
+  <a href="https://wa.me/923180245187" target="_blank" class="btn btn-white">Start Working With Us</a>
+</section>
+
+<!-- Pricing -->
+<section class="pricing" id="pricing">
+  <div class="pricing-hd">
+    <h2>Clear Pricing.</h2>
+    <p>Starting prices — final quote based on your project. All plans include revisions & support.</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="pcard" data-r>
+      <div class="p-name">Starter</div>
+      <div class="p-price">$99</div>
+      <div class="p-per">one-time / starting from</div>
+      <ul class="p-feats">
+        <li>1-Page Landing Website</li><li>Logo Design Included</li><li>Mobile Responsive</li><li>Basic SEO Setup</li><li>2 Revisions</li><li>7-Day Delivery</li>
+      </ul>
+      <a href="https://wa.me/923180245187" target="_blank" class="btn btn-outline" style="width:100%;justify-content:center;border-radius:25px">Get Started →</a>
+    </div>
+    <div class="pcard hot" data-r>
+      <span class="hot-tag">Most Popular</span>
+      <div class="p-name">Growth</div>
+      <div class="p-price">$299</div>
+      <div class="p-per">one-time / starting from</div>
+      <ul class="p-feats">
+        <li>5-Page Business Website</li><li>eCommerce Store Setup</li><li>Facebook Ads Campaign</li><li>10 Social Media Graphics</li><li>Full SEO Optimization</li><li>Unlimited Revisions</li><li>14-Day Delivery</li>
+      </ul>
+      <a href="https://wa.me/923180245187" target="_blank" class="btn" style="width:100%;justify-content:center;border-radius:25px;background:var(--bg);color:var(--white)">Get Started →</a>
+    </div>
+    <div class="pcard" data-r>
+      <div class="p-name">Agency</div>
+      <div class="p-price">Custom</div>
+      <div class="p-per">monthly retainer</div>
+      <ul class="p-feats">
+        <li>Full Website + eCommerce</li><li>Monthly Ad Management</li><li>Virtual Assistant 20hrs/mo</li><li>Unlimited Graphic Design</li><li>Store Management</li><li>Priority 24/7 Support</li>
+      </ul>
+      <a href="https://wa.me/923180245187" target="_blank" class="btn btn-outline" style="width:100%;justify-content:center;border-radius:25px">Contact Us →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testis" id="testimonials">
+  <h2>What Clients Say.</h2>
+  <p class="testis-sub">Real results from real clients across the globe.</p>
+  <div class="tgrid">
+    <div class="tcard" data-r><span class="tcard-stars">★★★★★</span><p class="tcard-text">"DMTECHY built our Shopify store and managed Facebook ads — sales increased 3x in the first month. Incredible work and always fast on WhatsApp."</p><div class="tcard-author"><div class="tcard-av">JM</div><div><div class="tcard-name">James Mitchell</div><div class="tcard-loc">🇺🇸 United States</div></div></div></div>
+    <div class="tcard" data-r><span class="tcard-stars">★★★★★</span><p class="tcard-text">"Very professional. They redesigned our entire website in 10 days — it looks amazing and our enquiries doubled since launch. Highly recommended!"</p><div class="tcard-author"><div class="tcard-av">SA</div><div><div class="tcard-name">Sarah Ahmed</div><div class="tcard-loc">🇦🇪 UAE</div></div></div></div>
+    <div class="tcard" data-r><span class="tcard-stars">★★★★★</span><p class="tcard-text">"Got a full branding package — logo, social graphics and business cards. Delivered in 3 days, looks stunning. Communication throughout was excellent."</p><div class="tcard-author"><div class="tcard-av">DK</div><div><div class="tcard-name">David Kimani</div><div class="tcard-loc">🇬🇧 United Kingdom</div></div></div></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Ready to elevate your<br/>digital presence?</h2>
+  <p>Let's discuss how DMTECHY can transform your business with world-class digital solutions.</p>
+  <a href="#contact" class="btn btn-dark">Start Your Project →</a>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <h2>Let's Start<br/>Your Project.</h2>
+      <p>Fill the form or reach us directly on WhatsApp — we reply within minutes.</p>
+      <a href="mailto:info@dmtechy.com" class="clink"><div class="clink-ic">📧</div><div><div class="clink-lbl">Email</div><div class="clink-val">info@dmtechy.com</div></div></a>
+      <a href="https://wa.me/923180245187" target="_blank" class="clink"><div class="clink-ic">💬</div><div><div class="clink-lbl">Phone / WhatsApp</div><div class="clink-val">+92 318 0245187</div></div></a>
+      <div class="clink"><div class="clink-ic">📍</div><div><div class="clink-lbl">Global Headquarters</div><div class="clink-val">Serving businesses worldwide</div></div></div>
+    </div>
+    <form class="cform" id="cForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="frow">
+        <div class="fg"><label>Name *</label><input type="text" name="name" placeholder="John Smith" required/></div>
+        <div class="fg"><label>Email *</label><input type="email" name="email" placeholder="john@email.com" required/></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label>WhatsApp</label><input type="text" name="phone" placeholder="+1 234 567 8900"/></div>
+        <div class="fg"><label>Country</label><input type="text" name="country" placeholder="USA, UK, UAE…"/></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label>Service *</label>
+          <select name="service" required>
+            <option value="">Choose a service…</option>
+            <option>eCommerce Store</option><option>Business Website</option><option>Landing Page</option>
+            <option>Facebook / Meta Ads</option><option>Digital Marketing</option><option>Graphic Design</option>
+            <option>Virtual Assistance</option><option>Store Management</option><option>AI Solutions</option>
+            <option>Full Package</option><option>Other</option>
+          </select>
+        </div>
+        <div class="fg"><label>Budget (USD)</label>
+          <select name="budget">
+            <option value="">Select…</option>
+            <option>Under $100</option><option>$100 – $300</option><option>$300 – $500</option><option>$500 – $1,000</option><option>$1,000+</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg"><label>Project Details *</label><textarea name="message" rows="5" placeholder="Tell us about your project, goals and timeline…" required></textarea></div>
+      <button type="submit" class="fsub">Send Message →</button>
+      <div id="fmsg"></div>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="dm_techy.png" alt="DMTECHY"/>
+      <div class="footer-brand-name">DMTECHY<span>.</span></div>
+      <p>A premium global digital agency building powerful, high-converting digital experiences for businesses worldwide. Elevating brands to the next level.</p>
+      <div class="footer-socials">
+        <a href="#" class="fsoc">FB</a>
+        <a href="#" class="fsoc">IG</a>
+        <a href="#" class="fsoc">LI</a>
+        <a href="https://wa.me/923180245187" target="_blank" class="fsoc">WA</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#pricing">Portfolio</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Key Services</h5>
+      <ul>
+        <li><a href="#services">Website Development</a></li>
+        <li><a href="#services">Ecommerce Solutions</a></li>
+        <li><a href="#services">Digital Marketing</a></li>
+        <li><a href="#services">SEO Optimization</a></li>
+        <li><a href="#services">Graphic Design</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact Us</h5>
+      <ul>
+        <li><a href="mailto:info@dmtechy.com">Email<br/>info@dmtechy.com</a></li>
+        <li><a href="https://wa.me/923180245187" target="_blank">Phone / WhatsApp<br/>+92 318 0245187</a></li>
+        <li><a href="#">Global Headquarters<br/>Serving businesses worldwide</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 DMTECHY. All rights reserved.</span>
+    <div class="footer-policy">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const io = new IntersectionObserver(entries => {
+  entries.forEach((e,i) => {
+    if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('in'), i*70); io.unobserve(e.target); }
+  });
+},{threshold:.06,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('[data-r]').forEach(el=>io.observe(el));
+
+// Form
+const form = document.getElementById('cForm');
+const msg = document.getElementById('fmsg');
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const btn = form.querySelector('.fsub');
+  btn.textContent='Sending…'; btn.disabled=true;
+  try {
+    const r = await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+    if(r.ok){ msg.textContent="✓ Sent! We'll reply within 24 hours."; msg.className='ok'; form.reset(); }
+    else throw new Error();
+  } catch { msg.textContent='⚠ Please WhatsApp: +92 318 0245187'; msg.className='err'; }
+  msg.style.display='block';
+  btn.textContent='Send Message →'; btn.disabled=false;
+  setTimeout(()=>msg.style.display='none',8000);
+});
+</script>
+</body>
+</html>
