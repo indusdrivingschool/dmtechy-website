@@ -1,5 +1,6 @@
 import { useSEO } from "@/lib/seo";
 import { motion } from "framer-motion";
+import bannerImg from "@/assets/dmtechy-banner.jpg";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, ChevronRight, Globe, Layers, Zap } from "lucide-react";
@@ -39,62 +40,70 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black">
-      {/* Hero Section */}
+      {/* Hero Section — two-column: text left, banner right */}
       <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        {/* Background grid */}
         <div className="absolute inset-0 z-0">
-          {/* Banner background image */}
-          <img
-            src="/dmtechy-banner.jpg"
-            alt="DMTECHY banner"
-            className="absolute inset-0 w-full h-full object-cover object-center"
-          />
-          {/* Dark overlay for readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/75 to-black z-10" />
-          <div className="absolute top-1/4 -left-1/4 w-[50vw] h-[50vh] bg-purple-900/20 rounded-full blur-[120px] pointer-events-none z-10" />
-          <div className="absolute bottom-1/4 -right-1/4 w-[50vw] h-[50vh] bg-pink-900/20 rounded-full blur-[120px] pointer-events-none z-10" />
-          {/* Grid overlay */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
         </div>
 
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-4xl"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-gray-300 mb-8 tracking-wide">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              Accepting New Projects
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left — Text */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-gray-300 mb-8 tracking-wide">
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                Accepting New Projects
+              </div>
 
-            <p className="text-xs font-bold tracking-[0.4em] text-gray-500 uppercase mb-5">
-              Code. Create. Scale.
-            </p>
-            
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 leading-[1.1] tracking-tight">
-              We Build Powerful <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">Digital Experiences.</span>
-            </h1>
-            
-            <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl leading-relaxed">
-              Modern Tech, Web &amp; Digital Solutions That Drive Real Results — for businesses worldwide. From coding to ecommerce, marketing to AI-powered branding.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact">
-                <button className="bg-white text-black px-8 py-4 rounded-full text-base font-bold hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 group">
-                  Get Started
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </Link>
-              <Link href="/portfolio">
-                <button className="bg-transparent text-white border border-white/20 px-8 py-4 rounded-full text-base font-bold hover:bg-white/5 transition-colors flex items-center justify-center">
-                  View Our Work
-                </button>
-              </Link>
-            </div>
-          </motion.div>
+              <p className="text-xs font-bold tracking-[0.4em] text-gray-500 uppercase mb-5">
+                Code. Create. Scale.
+              </p>
+
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 leading-[1.1] tracking-tight">
+                We Build Powerful <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">Digital Experiences.</span>
+              </h1>
+
+              <p className="text-lg text-gray-400 mb-10 max-w-xl leading-relaxed">
+                Modern Tech, Web &amp; Digital Solutions That Drive Real Results — for businesses worldwide. From coding to ecommerce, marketing to AI-powered branding.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/contact">
+                  <button className="bg-white text-black px-8 py-4 rounded-full text-base font-bold hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 group">
+                    Get Started
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </Link>
+                <Link href="/portfolio">
+                  <button className="bg-transparent text-white border border-white/20 px-8 py-4 rounded-full text-base font-bold hover:bg-white/5 transition-colors flex items-center justify-center">
+                    View Our Work
+                  </button>
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right — Banner Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
+            >
+              <img
+                src={bannerImg}
+                alt="DMTECHY — Code. Create. Scale."
+                className="w-full h-auto block"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+            </motion.div>
+          </div>
         </div>
       </section>
 
