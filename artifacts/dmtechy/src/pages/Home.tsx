@@ -40,84 +40,55 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black">
-      {/* Hero Section — two-column: text left, banner right */}
-      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-        {/* Background grid */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black" />
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
-        </div>
+      {/* Hero — Full banner with stats overlay */}
+      <section className="relative w-full pt-16 overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="relative"
+        >
+          {/* Banner image — full width */}
+          <img
+            src={bannerImg}
+            alt="DMTECHY — Code. Create. Scale."
+            className="w-full h-auto block"
+          />
 
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left — Text */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-gray-300 mb-8 tracking-wide">
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                Accepting New Projects
-              </div>
-
-              <p className="text-xs font-bold tracking-[0.4em] text-gray-500 uppercase mb-5">
-                Code. Create. Scale.
-              </p>
-
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 leading-[1.1] tracking-tight">
-                We Build Powerful <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">Digital Experiences.</span>
-              </h1>
-
-              <p className="text-lg text-gray-400 mb-10 max-w-xl leading-relaxed">
-                Modern Tech, Web &amp; Digital Solutions That Drive Real Results — for businesses worldwide. From coding to ecommerce, marketing to AI-powered branding.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contact">
-                  <button className="bg-white text-black px-8 py-4 rounded-full text-base font-bold hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 group">
-                    Get Started
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </Link>
-                <Link href="/portfolio">
-                  <button className="bg-transparent text-white border border-white/20 px-8 py-4 rounded-full text-base font-bold hover:bg-white/5 transition-colors flex items-center justify-center">
-                    View Our Work
-                  </button>
-                </Link>
-              </div>
-            </motion.div>
-
-            {/* Right — Banner Image */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
-            >
-              <img
-                src={bannerImg}
-                alt="DMTECHY — Code. Create. Scale."
-                className="w-full h-auto block"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-            </motion.div>
+          {/* Top badge overlay */}
+          <div className="absolute top-6 left-6 z-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 text-xs font-medium text-white tracking-wide">
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              Accepting New Projects
+            </div>
           </div>
-        </div>
+
+          {/* Bottom gradient fade into stats */}
+          <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black to-transparent z-10" />
+        </motion.div>
+
+        {/* Stats bar — sits right below banner, seamlessly connected */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          className="relative bg-black z-20 -mt-1"
+        >
+          <div className="container mx-auto px-4 md:px-6 py-10">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 border border-white/10 rounded-2xl bg-white/[0.03] px-8 py-8 backdrop-blur-sm">
+              {[
+                { end: 500, suffix: "+", label: "Projects" },
+                { end: 300, suffix: "+", label: "Clients" },
+                { end: 5,   suffix: "+", label: "Years Experience" },
+                { end: 99,  suffix: "%", label: "Satisfaction" },
+              ].map((s, i) => (
+                <Counter key={i} end={s.end} suffix={s.suffix} label={s.label} />
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 border-y border-white/5 bg-white/[0.02]">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-            <Counter end={500} suffix="+" label="Projects" />
-            <Counter end={300} suffix="+" label="Clients" />
-            <Counter end={5} suffix="+" label="Years Experience" />
-            <Counter end={99} suffix="%" label="Satisfaction" />
-          </div>
-        </div>
-      </section>
 
       {/* Services Preview */}
       <section className="py-32">
