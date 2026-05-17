@@ -35,7 +35,7 @@ function Counter({ end, suffix = "", label }: { end: number, suffix?: string, la
 }
 
 export default function Home() {
-  useSEO("Home");
+  useSEO("DMTECHY — Tech, Coding & Digital Solutions", "DMTECHY is a global digital agency. Web development, ecommerce, digital marketing, SEO, branding and AI-powered solutions. Code. Create. Scale.");
 
   return (
     <div className="min-h-screen bg-black">
@@ -61,6 +61,10 @@ export default function Home() {
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
               Accepting New Projects
             </div>
+
+            <p className="text-xs font-bold tracking-[0.4em] text-gray-500 uppercase mb-5">
+              Code. Create. Scale.
+            </p>
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 leading-[1.1] tracking-tight">
               We Build Powerful <br />
@@ -68,7 +72,7 @@ export default function Home() {
             </h1>
             
             <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl leading-relaxed">
-              Professional Web Development & Digital Marketing Solutions for Businesses Worldwide. We transform complex challenges into elegant, high-converting digital realities.
+              Modern Tech, Web &amp; Digital Solutions That Drive Real Results — for businesses worldwide. From coding to ecommerce, marketing to AI-powered branding.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
