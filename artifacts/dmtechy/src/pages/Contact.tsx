@@ -32,15 +32,35 @@ export default function Contact() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Static demo - just show a success toast
-    toast({
-      title: "Message sent successfully!",
-      description: "We'll get back to you within 24 hours.",
+ async function onSubmit(values: z.infer<typeof formSchema>) {
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(values),
     });
-    form.reset();
+    
+    if (res.ok) {
+      toast({
+        title: "Message sent successfully!",
+        description: "We'll get back to you within 24 hours.",
+      });
+      form.reset();
+    } else {
+      toast({
+        title: "Error sending message",
+        description: "Please try again or email us directly.",
+        variant: "destructive",
+      });
+    }
+  } catch (err) {
+    toast({
+      title: "Error sending message", 
+      description: "Please try again or email us directly.",
+      variant: "destructive",
+    });
   }
-
+}
   return (
     <div className="min-h-screen pt-32 pb-24 bg-black">
       <div className="container mx-auto px-4 md:px-6">
