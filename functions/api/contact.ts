@@ -1,5 +1,7 @@
-const RESEND_API_KEY = "re_EQre2eLZ_LVBsvMzQ5ubT9tbsjWtT2zyu";
 const ADMIN_EMAIL = "info@dmtechy.com";
+
+export async function onRequestPost(context: any) {
+  const RESEND_API_KEY = context.env.RESEND_API_KEY;
 
 export async function onRequestPost(context: any) {
   const { request } = context;
