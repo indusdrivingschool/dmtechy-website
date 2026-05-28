@@ -3,9 +3,6 @@ const ADMIN_EMAIL = "info@dmtechy.com";
 export async function onRequestPost(context: any) {
   const RESEND_API_KEY = context.env.RESEND_API_KEY;
 
-export async function onRequestPost(context: any) {
-  const { request } = context;
-  
   const cors = {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
@@ -13,13 +10,13 @@ export async function onRequestPost(context: any) {
   };
 
   try {
-    const body = await request.json() as any;
+    const body = await context.request.json() as any;
     const { name, email, phone, message } = body;
 
     const html = `
       <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;">
         <div style="background:#000;padding:20px;border-radius:8px 8px 0 0;">
-          <h1 style="color:white;margin:0;">New Contact Form Submission</h1>
+          <h1 style="color:white;margin:0;">New Inquiry from DMTechy Website</h1>
         </div>
         <div style="background:#f9f9f9;padding:24px;border:1px solid #eee;border-radius:0 0 8px 8px;">
           <p><b>Name:</b> ${name}</p>
@@ -29,7 +26,7 @@ export async function onRequestPost(context: any) {
         </div>
       </div>`;
 
-    await fetch("https://api.resend.com/emails", {
+    const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -43,6 +40,15 @@ export async function onRequestPost(context: any) {
         reply_to: email,
       }),
     });
+
+    if (!res.ok) {
+      const err = await res.text();
+      console.error("Resend error:", err);
+      return new Response(JSON.stringify({ error: err }), {
+        status: 500,
+        headers: { ...cors, "Content-Type": "application/json" },
+      });
+    }
 
     return new Response(JSON.stringify({ success: true }), {
       headers: { ...cors, "Content-Type": "application/json" },
