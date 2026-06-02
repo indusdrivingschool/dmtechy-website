@@ -8,101 +8,157 @@ import {
 const services = [
   {
     icon: Code2,
+    emoji: "🌐",
     title: "Website Development",
-    desc: "Custom, high-performance websites built with React, Next.js, and modern technologies tailored to your brand.",
+    tagline: "Fast. Modern. Custom.",
+    desc: "React & Next.js websites built for performance and conversions.",
     price: "$299",
     tag: "Most Popular",
+    color: "from-blue-500/20 to-blue-600/5",
+    border: "border-blue-500/20",
   },
   {
     icon: LayoutDashboard,
-    title: "Business Websites",
-    desc: "Professional corporate identities that establish trust, authority, and convert visitors into clients.",
+    emoji: "🏢",
+    title: "Business Website",
+    tagline: "Professional & Trustworthy.",
+    desc: "Corporate sites that establish authority and convert visitors.",
     price: "$199",
     tag: null,
+    color: "from-slate-500/20 to-slate-600/5",
+    border: "border-slate-500/20",
   },
   {
     icon: ShoppingCart,
-    title: "Ecommerce Store Development",
-    desc: "Scalable online stores engineered for maximum conversion with seamless checkout experiences.",
+    emoji: "🛒",
+    title: "Ecommerce Store",
+    tagline: "Sell More. Every Day.",
+    desc: "Scalable online stores engineered for maximum conversions.",
     price: "$499",
     tag: "Best Value",
+    color: "from-orange-500/20 to-orange-600/5",
+    border: "border-orange-500/20",
   },
   {
     icon: ShoppingCart,
+    emoji: "🟢",
     title: "Shopify Store Setup",
-    desc: "Premium Shopify themes, product listings, payment gateways, and custom integrations for modern retail.",
+    tagline: "Launch in Days.",
+    desc: "Premium themes, products, payments & custom integrations.",
     price: "$299",
     tag: null,
+    color: "from-green-500/20 to-green-600/5",
+    border: "border-green-500/20",
   },
   {
     icon: TrendingUp,
+    emoji: "📈",
     title: "Digital Marketing",
-    desc: "Data-driven strategies across multiple channels that deliver measurable ROI and sustainable growth.",
+    tagline: "Grow. Scale. Dominate.",
+    desc: "Multi-channel strategies that deliver real, measurable ROI.",
     price: "$199/mo",
     tag: null,
+    color: "from-purple-500/20 to-purple-600/5",
+    border: "border-purple-500/20",
   },
   {
     icon: Megaphone,
+    emoji: "📣",
     title: "Facebook Advertising",
-    desc: "Laser-targeted ad campaigns that reach your ideal customers and maximize return on ad spend.",
+    tagline: "Target. Convert. Profit.",
+    desc: "Laser-targeted ads that reach your ideal customers.",
     price: "$149/mo",
     tag: null,
+    color: "from-blue-600/20 to-blue-700/5",
+    border: "border-blue-600/20",
   },
   {
     icon: Instagram,
+    emoji: "📸",
     title: "Social Media Marketing",
-    desc: "Engaging content strategies, community management, and posting schedules that build brand loyalty.",
+    tagline: "Build. Engage. Grow.",
+    desc: "Content strategies and community management that build loyalty.",
     price: "$199/mo",
     tag: null,
+    color: "from-pink-500/20 to-pink-600/5",
+    border: "border-pink-500/20",
   },
   {
     icon: Search,
+    emoji: "🔍",
     title: "SEO Optimization",
-    desc: "Advanced on-page & off-page SEO strategies to dominate search rankings and drive organic traffic.",
+    tagline: "Rank #1 on Google.",
+    desc: "Advanced on-page & off-page SEO to dominate search rankings.",
     price: "$249/mo",
     tag: "High ROI",
+    color: "from-yellow-500/20 to-yellow-600/5",
+    border: "border-yellow-500/20",
   },
   {
     icon: PenTool,
+    emoji: "🎨",
     title: "Graphic Design",
-    desc: "Stunning visual assets — social posts, banners, flyers — that communicate your brand's essence.",
-    price: "$49",
+    tagline: "Look Premium Always.",
+    desc: "Stunning social posts, banners and flyers for your brand.",
+    price: "$79",
     tag: null,
+    color: "from-rose-500/20 to-rose-600/5",
+    border: "border-rose-500/20",
   },
   {
     icon: Palette,
+    emoji: "✨",
     title: "Branding",
-    desc: "Cohesive brand identities: logo, color systems, typography, and brand guidelines that leave a lasting impression.",
+    tagline: "Stand Out Forever.",
+    desc: "Logo, colors, typography & brand guidelines that impress.",
     price: "$199",
     tag: null,
+    color: "from-violet-500/20 to-violet-600/5",
+    border: "border-violet-500/20",
   },
   {
     icon: Headphones,
+    emoji: "🎧",
     title: "Virtual Assistance",
-    desc: "Professional administrative support — inbox management, scheduling, data entry — to scale your operations.",
+    tagline: "Focus on What Matters.",
+    desc: "Professional admin support to scale your operations.",
     price: "$99/mo",
     tag: null,
+    color: "from-teal-500/20 to-teal-600/5",
+    border: "border-teal-500/20",
   },
   {
     icon: FileText,
+    emoji: "🚀",
     title: "Landing Pages",
-    desc: "High-converting funnels designed to capture leads and drive sales with compelling copy and design.",
+    tagline: "Click. Convert. Win.",
+    desc: "High-converting funnels designed to capture leads and sales.",
     price: "$149",
     tag: null,
+    color: "from-cyan-500/20 to-cyan-600/5",
+    border: "border-cyan-500/20",
   },
   {
     icon: RefreshCw,
+    emoji: "🔄",
     title: "Website Redesign",
-    desc: "Modernize your outdated digital presence with a fresh, conversion-focused design that impresses visitors.",
+    tagline: "Fresh Look. More Sales.",
+    desc: "Modernize your outdated site with a conversion-focused design.",
     price: "$299",
     tag: null,
+    color: "from-indigo-500/20 to-indigo-600/5",
+    border: "border-indigo-500/20",
   },
   {
     icon: Gauge,
-    title: "Website Speed Optimization",
-    desc: "Performance audits and tuning for lightning-fast load times that boost SEO rankings and user satisfaction.",
-    price: "$99",
+    emoji: "⚡",
+    title: "Speed Optimization",
+    tagline: "Lightning Fast Results.",
+    desc: "Performance tuning for fast load times that boost SEO.",
+    price: "$149",
     tag: null,
+    color: "from-amber-500/20 to-amber-600/5",
+    border: "border-amber-500/20",
   },
 ];
 
@@ -143,7 +199,7 @@ const packages = [
     name: "Premium",
     price: "$999",
     period: "one-time",
-    desc: "Full-service solution for serious brands ready to dominate their market.",
+    desc: "Full-service solution for serious brands ready to dominate.",
     features: [
       "Full Custom Website / Web App",
       "Branding & Identity Package",
@@ -198,8 +254,8 @@ export default function Services() {
           </motion.p>
         </div>
 
-        {/* Service Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-32">
+        {/* Service Cards — Poster Style */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-32">
           {services.map((service, index) => (
             <motion.a
               key={service.title}
@@ -210,34 +266,30 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.04 }}
-              whileHover={{ y: -6 }}
-              data-testid={`service-card-${index}`}
-              className="group relative bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 hover:border-white/25 transition-all cursor-pointer flex flex-col"
+              whileHover={{ y: -6, scale: 1.02 }}
+              className={`group relative bg-gradient-to-br ${service.color} border ${service.border} p-6 rounded-2xl hover:border-white/30 transition-all cursor-pointer flex flex-col items-start gap-3`}
             >
-              {/* Tag badge */}
+              {/* Tag */}
               {service.tag && (
-                <span className="absolute top-4 right-4 text-[10px] font-bold uppercase tracking-widest bg-white text-black px-2.5 py-1 rounded-full">
+                <span className="absolute top-3 right-3 text-[9px] font-bold uppercase tracking-widest bg-white text-black px-2 py-0.5 rounded-full">
                   {service.tag}
                 </span>
               )}
 
-              {/* Icon */}
-              <div className="w-14 h-14 bg-white text-black flex items-center justify-center rounded-xl mb-6 group-hover:scale-110 transition-transform shrink-0">
-                <service.icon size={24} />
-              </div>
+              {/* Big Emoji Icon */}
+              <div className="text-4xl mb-1">{service.emoji}</div>
 
-              {/* Content */}
-              <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-              <p className="text-gray-400 leading-relaxed text-sm flex-1">{service.desc}</p>
+              {/* Title */}
+              <h3 className="text-white font-bold text-base leading-tight">{service.title}</h3>
 
-              {/* Footer row */}
-              <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between">
-                <div>
-                  <span className="text-xs text-gray-500 uppercase tracking-wider block mb-0.5">Starting from</span>
-                  <span className="text-2xl font-black text-white">{service.price}</span>
-                </div>
-                <span className="flex items-center gap-1.5 text-xs font-semibold text-white bg-white/10 group-hover:bg-white group-hover:text-black px-4 py-2 rounded-full transition-colors">
-                  Get Quote
+              {/* Tagline — bold one liner */}
+              <p className="text-white/70 text-xs font-semibold uppercase tracking-wide">{service.tagline}</p>
+
+              {/* Price */}
+              <div className="mt-auto pt-4 w-full border-t border-white/10 flex items-center justify-between">
+                <span className="text-white font-black text-xl">{service.price}</span>
+                <span className="text-[11px] text-white/50 group-hover:text-white transition-colors font-semibold">
+                  Tap to order →
                 </span>
               </div>
             </motion.a>
@@ -281,7 +333,6 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              data-testid={`package-card-${i}`}
               className={`relative rounded-3xl p-8 flex flex-col ${
                 pkg.highlight
                   ? "bg-white text-black"
@@ -321,11 +372,10 @@ export default function Services() {
                 ))}
               </ul>
 
-              <a
+              
                 href={buildWALink(pkg.name + " Package")}
                 target="_blank"
                 rel="noopener noreferrer"
-                data-testid={`package-cta-${i}`}
                 className={`w-full text-center py-4 rounded-xl font-bold text-sm tracking-wide transition-all ${
                   pkg.highlight
                     ? "bg-black text-white hover:bg-gray-900"
@@ -338,7 +388,7 @@ export default function Services() {
           ))}
         </div>
 
-        {/* Custom quote CTA */}
+        {/* Custom Quote CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -346,11 +396,10 @@ export default function Services() {
           className="text-center mt-16"
         >
           <p className="text-gray-400 mb-4">Need a custom solution? We'll build exactly what you need.</p>
-          <a
+          
             href="https://wa.me/923180245187?text=Hi%20DMTECHY%2C%20I%20need%20a%20custom%20quote%20for%20my%20project."
             target="_blank"
             rel="noopener noreferrer"
-            data-testid="button-custom-quote"
             className="inline-flex items-center gap-2 border border-white/20 text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition-all"
           >
             Request Custom Quote
