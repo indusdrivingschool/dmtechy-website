@@ -2,7 +2,6 @@ const ADMIN_EMAIL = "info@dmtechy.com";
 
 export async function onRequestPost(context: any) {
   const RESEND_API_KEY = context.env.RESEND_API_KEY;
-
   const cors = {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
@@ -11,7 +10,7 @@ export async function onRequestPost(context: any) {
 
   try {
     const body = await context.request.json() as any;
-    const { name, email, phone, message } = body;
+    const { name, email, phone, message, service, budget } = body; // ← added service & budget
 
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -22,7 +21,7 @@ export async function onRequestPost(context: any) {
       body: JSON.stringify({
         from: "DMTechy <info@dmtechy.com>",
         to: [ADMIN_EMAIL],
-        subject: `New inquiry from ${name}`,
+        subject: `New inquiry from ${name} — ${service || "General"}`, // ← shows service in subject
         reply_to: email,
         html: `
           <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;">
@@ -33,6 +32,8 @@ export async function onRequestPost(context: any) {
               <p><b>Name:</b> ${name}</p>
               <p><b>Email:</b> ${email}</p>
               <p><b>Phone:</b> ${phone}</p>
+              <p><b>Service Interested In:</b> ${service || "Not specified"}</p>
+              <p><b>Budget Range:</b> ${budget || "Not specified"}</p>
               <p><b>Message:</b> ${message}</p>
             </div>
           </div>`,
