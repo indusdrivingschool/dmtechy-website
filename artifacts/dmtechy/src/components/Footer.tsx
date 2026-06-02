@@ -5,40 +5,37 @@ import { Linkedin, Twitter } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="bg-black pt-24 pb-12 border-t border-white/10">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          <div className="lg:col-span-1">
-            <Link href="/">
-              <span className="flex items-center gap-3 cursor-pointer mb-6 group">
-                <img
-                  src="/dmtechy-logo.png"
-                  alt="DMTECHY Logo"
-                  className="h-12 w-12 object-contain transition-transform group-hover:scale-105"
-                />
-                <span className="text-2xl font-black tracking-tighter text-white group-hover:text-gray-300 transition-colors">
-                  DMTECHY.
-                </span>
-              </span>
-            </Link>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              A premium global digital agency building powerful, high-converting digital experiences for businesses worldwide. Elevating brands to the next level.
-            </p>
-            <div className="flex gap-4">
-              <a href="https://www.facebook.com/dmtechy/" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors">
-                <SiFacebook size={18} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors">
-                <SiInstagram size={18} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors">
-                <Linkedin size={18} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors">
-                <Twitter size={18} />
-              </a>
-            </div>
-          </div>
+     <div className="flex gap-4">
+  <a
+    href="https://www.facebook.com/dmtechy/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+    className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors"
+  >
+    <SiFacebook size={18} />
+  </a>
 
+  <a
+    href="https://www.instagram.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+    className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors"
+  >
+    <SiInstagram size={18} />
+  </a>
+
+  <a
+    href="https://www.linkedin.com/feed/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+    className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors"
+  >
+    <Linkedin size={18} />
+  </a>
+</div>
           <div>
             <h4 className="text-white font-bold tracking-wide uppercase mb-6">Quick Links</h4>
             <ul className="space-y-4">
