@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { SiFacebook, SiInstagram } from "react-icons/si";
-import { Linkedin, Twitter } from "lucide-react";
+import { Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -16,7 +16,7 @@ export default function Footer() {
               className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors">
               <SiFacebook size={18} />
             </a>
-            <a href="https://www.instagram.com/dmtechy_com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+            <a href="https://www.instagram.com/dmtechy_com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
               className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors">
               <SiInstagram size={18} />
             </a>
@@ -58,7 +58,7 @@ export default function Footer() {
             </ul>
           </div>
 
-        </div>{/* end grid */}
+        </div>
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -71,7 +71,7 @@ export default function Footer() {
           </div>
         </div>
 
-      </div>{/* end max-w wrapper */}
+      </div>
     </footer>
   );
 }
