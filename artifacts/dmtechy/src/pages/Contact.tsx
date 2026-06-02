@@ -9,12 +9,14 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { SiFacebook, SiInstagram } from "react-icons/si";
-import { Linkedin, Twitter } from "lucide-react";
+import { Linkedin } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
   phone: z.string().min(5, "Phone number is required"),
+  service: z.string().min(1, "Please select a service"),
+  budget: z.string().min(1, "Please select a budget range"),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
@@ -28,44 +30,47 @@ export default function Contact() {
       name: "",
       email: "",
       phone: "",
+      service: "",
+      budget: "",
       message: "",
     },
   });
 
- async function onSubmit(values: z.infer<typeof formSchema>) {
-  try {
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(values),
-    });
-    
-    if (res.ok) {
-      toast({
-        title: "Message sent successfully!",
-        description: "We'll get back to you within 24 hours.",
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
       });
-      form.reset();
-    } else {
+
+      if (res.ok) {
+        toast({
+          title: "Message sent successfully!",
+          description: "We'll get back to you within 24 hours.",
+        });
+        form.reset();
+      } else {
+        toast({
+          title: "Error sending message",
+          description: "Please try again or email us directly.",
+          variant: "destructive",
+        });
+      }
+    } catch (err) {
       toast({
         title: "Error sending message",
         description: "Please try again or email us directly.",
         variant: "destructive",
       });
     }
-  } catch (err) {
-    toast({
-      title: "Error sending message", 
-      description: "Please try again or email us directly.",
-      variant: "destructive",
-    });
   }
-}
+
   return (
     <div className="min-h-screen pt-32 pb-24 bg-black">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          
+
           {/* Info Side */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -120,17 +125,17 @@ export default function Contact() {
             <div>
               <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Follow Us</h4>
               <div className="flex gap-4">
-                <a href="#" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors">
+                <a href="https://www.facebook.com/dmtechy/" target="_blank" rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors">
                   <SiFacebook size={20} />
                 </a>
-                <a href="#" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors">
+                <a href="https://www.instagram.com/dmtechy_com/" target="_blank" rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors">
                   <SiInstagram size={20} />
                 </a>
-                <a href="#" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors">
+                <a href="https://www.linkedin.com/in/tara-e-7313a93a2/" target="_blank" rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors">
                   <Linkedin size={20} />
-                </a>
-                <a href="#" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors">
-                  <Twitter size={20} />
                 </a>
               </div>
             </div>
@@ -145,6 +150,8 @@ export default function Contact() {
             <h3 className="text-2xl font-bold text-white mb-8">Send us a message</h3>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+
+                {/* Name */}
                 <FormField
                   control={form.control}
                   name="name"
@@ -158,7 +165,8 @@ export default function Contact() {
                     </FormItem>
                   )}
                 />
-                
+
+                {/* Email + Phone */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <FormField
                     control={form.control}
@@ -188,6 +196,60 @@ export default function Contact() {
                   />
                 </div>
 
+                {/* Service Dropdown */}
+                <FormField
+                  control={form.control}
+                  name="service"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-gray-300">Service Interested In</FormLabel>
+                      <FormControl>
+                        <select
+                          {...field}
+                          className="w-full bg-black/50 border border-white/10 rounded-md px-3 py-2 text-white focus:outline-none focus:ring-1 focus:ring-white/30"
+                        >
+                          <option value="" disabled className="bg-black">Select a service...</option>
+                          <option value="Website Development" className="bg-black">Website Development</option>
+                          <option value="Shopify / Ecommerce" className="bg-black">Shopify / Ecommerce</option>
+                          <option value="Digital Marketing" className="bg-black">Digital Marketing</option>
+                          <option value="SEO Optimization" className="bg-black">SEO Optimization</option>
+                          <option value="Branding & Design" className="bg-black">Branding & Design</option>
+                          <option value="AI-Powered Solutions" className="bg-black">AI-Powered Solutions</option>
+                          <option value="Other" className="bg-black">Other</option>
+                        </select>
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                {/* Budget Dropdown */}
+                <FormField
+                  control={form.control}
+                  name="budget"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-gray-300">Budget Range</FormLabel>
+                      <FormControl>
+                        <select
+                          {...field}
+                          className="w-full bg-black/50 border border-white/10 rounded-md px-3 py-2 text-white focus:outline-none focus:ring-1 focus:ring-white/30"
+                        >
+                          <option value="" disabled className="bg-black">Select your budget...</option>
+                          <option value="Under $500" className="bg-black">Under $500</option>
+                          <option value="$500 - $1,000" className="bg-black">$500 - $1,000</option>
+                          <option value="$1,000 - $3,000" className="bg-black">$1,000 - $3,000</option>
+                          <option value="$3,000 - $5,000" className="bg-black">$3,000 - $5,000</option>
+                          <option value="$5,000+" className="bg-black">$5,000+</option>
+                          <option value="Not sure yet" className="bg-black">Not sure yet</option>
+                        </select>
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                {/* Message */}
                 <FormField
                   control={form.control}
                   name="message"
@@ -195,10 +257,10 @@ export default function Contact() {
                     <FormItem>
                       <FormLabel className="text-gray-300">Project Details</FormLabel>
                       <FormControl>
-                        <Textarea 
-                          placeholder="Tell us about your project goals, timeline, and budget..." 
-                          className="min-h-[150px] bg-black/50 border-white/10 focus-visible:ring-white/30 text-white resize-none" 
-                          {...field} 
+                        <Textarea
+                          placeholder="Tell us about your project goals, timeline, and any specific requirements..."
+                          className="min-h-[150px] bg-black/50 border-white/10 focus-visible:ring-white/30 text-white resize-none"
+                          {...field}
                         />
                       </FormControl>
                       <FormMessage />
@@ -209,9 +271,11 @@ export default function Contact() {
                 <button type="submit" className="w-full bg-white text-black py-4 rounded-xl font-bold text-lg hover:bg-gray-200 transition-colors">
                   Submit Inquiry
                 </button>
+
               </form>
             </Form>
           </motion.div>
+
         </div>
       </div>
     </div>
