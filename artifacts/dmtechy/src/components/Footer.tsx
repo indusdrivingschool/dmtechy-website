@@ -17,7 +17,7 @@ export default function Footer() {
   </a>
 
   <a
-    href="https://www.instagram.com/"
+    href="https://www.instagram.com/dmtechy_com"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Instagram"
@@ -27,7 +27,7 @@ export default function Footer() {
   </a>
 
   <a
-    href="https://www.linkedin.com/feed/"
+    href="https://www.linkedin.com/in/tara-e-7313a93a2/"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="LinkedIn"
