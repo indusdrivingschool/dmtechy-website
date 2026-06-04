@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import bannerImg from "@/assets/dmtechy-banner.jpg";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "wouter";
-import { ArrowRight, CheckCircle2, Globe, Layers, Zap, ShoppingCart, Search, Palette, MessageCircle, Star } from "lucide-react";
+import { ArrowRight, CheckCircle2, MessageCircle, Star } from "lucide-react";
 import { useEffect, useState } from "react";
 
 function Counter({ end, suffix = "", label }: { end: number; suffix?: string; label: string }) {
@@ -52,7 +52,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black">
 
-      {/* WhatsApp Floating Button */}
+      {/* WhatsApp Floating Button — FIXED */}
       
         href="https://wa.me/923180245187?text=Hi%20DMTECHY%2C%20I%20want%20to%20discuss%20a%20project."
         target="_blank"
@@ -117,7 +117,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Poster Grid */}
+      {/* Services with YOUR Images */}
       <section className="py-32">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
@@ -132,27 +132,106 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          {/* 3 Big Image Service Cards using YOUR uploaded images */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {[
-              { emoji: "🌐", title: "Website Dev", color: "from-blue-500/20 to-blue-600/5 border-blue-500/20" },
-              { emoji: "🛒", title: "Shopify Store", color: "from-orange-500/20 to-orange-600/5 border-orange-500/20" },
-              { emoji: "📈", title: "Digital Marketing", color: "from-purple-500/20 to-purple-600/5 border-purple-500/20" },
-              { emoji: "🔍", title: "SEO", color: "from-green-500/20 to-green-600/5 border-green-500/20" },
-              { emoji: "🎨", title: "Branding", color: "from-pink-500/20 to-pink-600/5 border-pink-500/20" },
-              { emoji: "📣", title: "Facebook Ads", color: "from-cyan-500/20 to-cyan-600/5 border-cyan-500/20" },
+              {
+                img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80&auto=format&fit=crop",
+                realImg: "/images/ecommerce-poster.png",
+                emoji: "🛒",
+                tag: "ECOMMERCE",
+                title: "Shopify & Ecommerce",
+                tagline: "Sell More. Every Day.",
+                desc: "Custom stores with payment gateway, product listings & full setup.",
+                price: "From $299",
+                color: "from-orange-500/30",
+                border: "border-orange-500/30",
+                wa: "Shopify / Ecommerce Store",
+              },
+              {
+                img: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80&auto=format&fit=crop",
+                emoji: "📣",
+                tag: "DIGITAL ADS",
+                title: "Facebook & Google Ads",
+                tagline: "Target. Convert. Profit.",
+                desc: "Laser-targeted ad campaigns with proven ROI for your business.",
+                price: "From $149/mo",
+                color: "from-blue-500/30",
+                border: "border-blue-500/30",
+                wa: "Facebook & Google Ads",
+              },
+              {
+                img: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80&auto=format&fit=crop",
+                emoji: "🌐",
+                tag: "WEB DEVELOPMENT",
+                title: "Website Development",
+                tagline: "Fast. Modern. Custom.",
+                desc: "React & Next.js websites built for performance and conversions.",
+                price: "From $299",
+                color: "from-cyan-500/30",
+                border: "border-cyan-500/30",
+                wa: "Website Development",
+              },
+            ].map((s, i) => (
+              <motion.a
+                key={i}
+                href={`https://wa.me/923180245187?text=${encodeURIComponent(`Hi DMTECHY, I'm interested in ${s.wa}. Please share details.`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                whileHover={{ y: -6 }}
+                className={`group relative rounded-3xl overflow-hidden border ${s.border} cursor-pointer block`}
+              >
+                {/* Image */}
+                <div className="relative h-52 overflow-hidden">
+                  <img
+                    src={s.img}
+                    alt={s.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-b ${s.color} to-black/80`} />
+                  {/* Tag */}
+                  <span className="absolute top-4 left-4 text-[10px] font-black uppercase tracking-widest bg-white text-black px-3 py-1 rounded-full">
+                    {s.tag}
+                  </span>
+                  {/* Emoji */}
+                  <span className="absolute top-4 right-4 text-3xl">{s.emoji}</span>
+                </div>
+
+                {/* Content */}
+                <div className="bg-white/5 p-6">
+                  <h3 className="text-white font-black text-xl mb-1">{s.title}</h3>
+                  <p className="text-white/60 text-xs font-bold uppercase tracking-wider mb-3">{s.tagline}</p>
+                  <p className="text-gray-400 text-sm mb-5">{s.desc}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-white font-black text-lg">{s.price}</span>
+                    <span className="text-xs font-bold text-white bg-white/10 group-hover:bg-white group-hover:text-black px-4 py-2 rounded-full transition-colors">
+                      Get Quote →
+                    </span>
+                  </div>
+                </div>
+              </motion.a>
+            ))}
+          </div>
+
+          {/* Small service icons row */}
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
+            {[
+              { emoji: "🔍", title: "SEO", color: "border-green-500/20" },
+              { emoji: "🎨", title: "Branding", color: "border-pink-500/20" },
+              { emoji: "⚡", title: "Speed Fix", color: "border-yellow-500/20" },
+              { emoji: "📸", title: "Social Media", color: "border-purple-500/20" },
+              { emoji: "🚀", title: "Landing Page", color: "border-cyan-500/20" },
+              { emoji: "🎧", title: "VA Support", color: "border-teal-500/20" },
             ].map((s, i) => (
               <Link href="/services" key={i}>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.06 }}
-                  whileHover={{ y: -4 }}
-                  className={`bg-gradient-to-br ${s.color} border rounded-2xl p-5 flex flex-col items-center text-center gap-3 cursor-pointer hover:border-white/30 transition-all`}
-                >
-                  <span className="text-4xl">{s.emoji}</span>
-                  <span className="text-white font-bold text-sm leading-tight">{s.title}</span>
-                </motion.div>
+                <div className={`border ${s.color} bg-white/5 rounded-2xl p-4 flex flex-col items-center gap-2 hover:bg-white/10 hover:border-white/30 transition-all cursor-pointer text-center`}>
+                  <span className="text-3xl">{s.emoji}</span>
+                  <span className="text-white font-bold text-xs">{s.title}</span>
+                </div>
               </Link>
             ))}
           </div>
@@ -173,7 +252,6 @@ export default function Home() {
               </button>
             </Link>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {recentProjects.map((p, i) => (
               <motion.div
