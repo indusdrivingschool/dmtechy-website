@@ -369,6 +369,19 @@ export default function Home() {
         </div>
       </section>
 
+
+<section className="w-full px-4 py-8 bg-white">
+  <div className="max-w-5xl mx-auto">
+    <img
+      src="/transport-nsw-notice.png"
+      alt="Transport for NSW misconduct reporting notice"
+      className="block w-full h-auto mx-auto"
+      loading="lazy"
+    />
+  </div>
+</section>
+
+  
       {/* FAQ */}
       <section className="py-32">
         <div className="container mx-auto px-4 md:px-6 max-w-3xl">
