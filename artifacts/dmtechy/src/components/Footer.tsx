@@ -59,7 +59,16 @@ export default function Footer() {
           </div>
 
         </div>
-
+<section className="w-full px-4 py-8 bg-white">
+  <div className="max-w-5xl mx-auto">
+    <img
+      src="/transport-nsw-notice.png"
+      alt="Transport for NSW misconduct reporting notice"
+      className="block w-full h-auto mx-auto"
+      loading="lazy"
+    />
+  </div>
+</section>
         {/* Bottom bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">
